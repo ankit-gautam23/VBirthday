@@ -21,3 +21,12 @@ function playSong(song) {
     // Play the new song
     audioPlayer.play();
 }
+
+// Function to play the birthday song on page load
+function playBirthdaySongOnLoad() {
+    const birthdaySong = document.getElementById('birthdaySong');
+    birthdaySong.play();
+}
+
+// Call the function when the page loads
+window.onload = playBirthdaySongOnLoad;
