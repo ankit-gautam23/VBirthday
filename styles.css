@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: rgba(105, 13, 197, 0.103);
+    ;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 6rem;
+}
+
+.birthday-pic {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cake_wrapper {
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.image_container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.image_wraper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.image_wraper img {
+    box-shadow: (206, 178, 252, 0.48);
+}
+
+#cake {
+    display: block;
+    position: relative;
+    margin: -10em auto 0 auto;
+}
+
+/* ============================================== Candle
+  */
+
+.velas {
+    background: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: 228px;
+    left: 50%;
+    margin-left: -2.4px;
+    margin-top: -8.33333333px;
+    width: 5px;
+    height: 35px;
+    transform: translateY(-300px);
+    backface-visibility: hidden;
+    animation: in 500ms 6s ease-out forwards;
+}
+
+.velas:after,
+.velas:before {
+    background: rgba(255, 0, 0, 0.4);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2.22222222px;
+}
+
+.velas:after {
+    top: 25%;
+    left: 0;
+}
+
+.velas:before {
+    top: 45%;
+    left: 0;
+}
+
+/* ============================================== Fire
+  */
+
+.fuego {
+    border-radius: 100%;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -2.6px;
+    width: 6.66666667px;
+    height: 18px;
+}
+
+.fuego:nth-child(1) {
+    animation: fuego 2s 6.5s infinite;
+}
+
+.fuego:nth-child(2) {
+    animation: fuego 1.5s 6.5s infinite;
+}
+
+.fuego:nth-child(3) {
+    animation: fuego 1s 6.5s infinite;
+}
+
+.fuego:nth-child(4) {
+    animation: fuego 0.5s 6.5s infinite;
+}
+
+.fuego:nth-child(5) {
+    animation: fuego 0.2s 6.5s infinite;
+}
+
+/* ============================================== Animation Fire
+  */
+
+@keyframes fuego {
+
+    0%,
+    100% {
+        background: #ff1f00;
+        box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        background: rgba(255, 51, 0, 0.477);
+        box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+        transform: translateY(-20px) scale(0);
+    }
+}
+
+@keyframes in {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.text {
+    color: #8b6a60;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    padding: 10px ;
+    h1 {
+        font-size: 1.4em;
+    }
+}
+
+#curved-border {
+    bottom: 0;
+    width: 100vw;
+    position: fixed;
+
+    path {
+        fill: #8d77db;
+    }
+}
+
+.image_wraper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+    background-size: cover;
+    transition: ease-in-out .3s;
+
+    z-index: 2;
+
+}
+
+.image:before {
+    content: ' ';
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    background: inherit;
+    background-position: bottom;
+    filter: blur(40px) saturate(0%);
+    transform: scaleX(0.4);
+    transition: ease-in-out .4s;
+    border-radius: 120px;
+    transform-origin: right;
+    opacity: 0;
+
+    z-index: -1;
+}
+
+.image:hover {
+    border-radius: 5px;
+    width: 450px;
+    height: 310px;
+
+    box-shadow: 0px 0px 1px rgba(255, 101, 101, 0.04), 0px 2px 6px rgba(9, 55, 53, 0.08), 0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14);
+
+    &:before {
+        width: 100%;
+        opacity: 0.18;
+        filter: blur(10px) saturate(100%);
+        transform: scale(3) translate3d(-18%, 0px, 0px);
+    }
+}
+
+.image1 {
+    background-image: url('./imgs/vb1.jpg');
+}
+
+.image2 {
+    background-image: url('./imgs/vb2.jpg');
+}
+
+.image3 {
+    background-image: url('./imgs/vb3.jpg');
+}
+
+.image4 {
+    background-image: url('./imgs/vb4.jpg');
+}
+
+.image5 {
+    background-image: url('./imgs/vb5.jpg');
+}
+
+.image6 {
+    background-image: url('./imgs/vb6.jpg');
+}
+
+.image7 {
+    background-image: url('./imgs/vb7.jpg');
+}
+
+.container__info {
+    position: relative;
+    line-height: 1.8;
+    transition: ease-in-out .3s;
+    opacity: 0;
+}
+
+.container__location {
+    transition-delay: .15s;
+}
+
+.container__info {
+    width: 90%;
+    transform: translate3d(5%, 0px, 0px);
+    opacity: 1;
+}
+
+.link {
+    border-bottom: 1px solid transparent;
+    color: #06C0A8;
+    text-decoration: none;
+    transition: ease-in .13s;
+
+    &:hover {
+        background-color: #06C0A8;
+        color: #ffffff;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+}
+
+@media all and (max-width: 600px) {
+    .container__info {
+        /* transform: translate3d(-40%, 0px, 0px); */
+    }
+}
