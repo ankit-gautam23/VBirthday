@@ -28,5 +28,5 @@ function playBirthdaySongOnLoad() {
     birthdaySong.play();
 }
 
-// Call the function when the page loads
-window.onload = playBirthdaySongOnLoad;
+// Call the function when the entire HTML document has loaded
+document.addEventListener('DOMContentLoaded', playBirthdaySongOnLoad);
